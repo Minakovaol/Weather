@@ -14,12 +14,14 @@ const App: FC = () => {
   const alertMsg = useSelector((state: RootState) => state.alert.message);
 
   return (
+    
     <div className="has-text-centered">
       <Search title="Enter city" />
       { weatherData && <Weather data={weatherData} />}
       {alertMsg && <Alert message={alertMsg} onClose={() => dispatch(setAlert(''))} />}
       {error && <Alert message={error} onClose={() => dispatch(setError())} />}
     </div>
+    
   );
 }
 

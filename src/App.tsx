@@ -6,6 +6,7 @@ import Alert from './components/Alert';
 import Weather from './components/Weather';
 import { setAlert } from './store/actions/alertActions';
 import { setError } from './store/actions/weatherActions';
+import "./../src/App.css";
 
 const App: FC = () => {
   const dispatch = useDispatch();
@@ -14,15 +15,13 @@ const App: FC = () => {
   const alertMsg = useSelector((state: RootState) => state.alert.message);
 
   return (
-    
-    <div className="has-text-centered">
-      <Search title="Enter city" />
-      { weatherData && <Weather data={weatherData} />}
-      {alertMsg && <Alert message={alertMsg} onClose={() => dispatch(setAlert(''))} />}
-      {error && <Alert message={error} onClose={() => dispatch(setError())} />}
-    </div>
-    
-  );
+          <div className="has-text-white is-family-monospace is-italic">
+            <Search title="Enter city" />
+              { weatherData && <Weather data={weatherData} />}
+              {alertMsg && <Alert message={alertMsg} onClose={() => dispatch(setAlert(''))} />}
+              {error && <Alert message={error} onClose={() => dispatch(setError())} />}
+          </div>    
+   );
 }
 
 export default App;

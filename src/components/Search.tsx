@@ -41,7 +41,7 @@ const Search: FC<SearchProps> = ({ title }) => {
               value={city}
               onChange={changeHandler}
             />
-            <button className="button is-fullwidth is-info" style={{maxWidth: 100, margin: '0 auto'}}>Search</button>
+            <button className="button is-fullwidth is-link is-outlined" style={{maxWidth: 300, margin: '0 auto'}}>Search</button>
           </form>
         </div>
       </div>
